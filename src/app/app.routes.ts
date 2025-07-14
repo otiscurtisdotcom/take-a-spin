@@ -6,14 +6,17 @@ import { ResultsPage } from './results-page/results-page';
 export const routes: Routes = [
   {
     path: '',
-    component: WelcomePage
+    component: WelcomePage,
+    data: { animation: 'WelcomePage' }
   },
   {
     path: 'play',
-    component: WheelPage
+    component: WheelPage,
+    data: { animation: 'WheelPage' }
   },
   {
     path: 'results',
-    component: ResultsPage
+    component: ResultsPage,
+    data: { animation: 'ResultsPage' }
   }
 ];
