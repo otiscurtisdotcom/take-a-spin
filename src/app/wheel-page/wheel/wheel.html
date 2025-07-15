@@ -1,17 +1,20 @@
-<svg viewBox="0 0 200 200" class="wheel">
-  <defs>
-    <path id="slice" d="M100,100 L186.6,50 A100,100 0 0,1 186.6,150 Z" />
-  </defs>
+<div class="wheel-wrapper" [@spin]="{ value: spinTrigger(), params: { transform: getRotationStyle() } }"
+  (@spin.done)="onAnimationDone()" [style.transform]="finalTransform()">
+  <svg viewBox="0 0 200 200" class="wheel">
+    <defs>
+      <path id="slice" d="M100,100 L186.6,50 A100,100 0 0,1 186.6,150 Z" />
+    </defs>
 
-  <g transform="rotate(-90, 100, 100)">
-    @for (segment of segments(); let i = $index; track i) {
-    <g [attr.transform]="segment.rotation">
-      <use href="#slice" [attr.fill]="segment.color" />
-      <text x="163" y="100" text-anchor="middle" alignment-baseline="middle" class="segment-label"
-        transform="rotate(90, 163, 100)">
-        {{ segment.label }}
-      </text>
+    <g transform="rotate(-90, 100, 100)">
+      @for (segment of segments(); let i = $index; track i) {
+      <g [attr.transform]="segment.rotation">
+        <use href="#slice" [attr.fill]="segment.color" />
+        <text x="163" y="100" text-anchor="middle" alignment-baseline="middle" class="segment-label"
+          transform="rotate(90, 163, 100)">
+          {{ segment.label }}
+        </text>
+      </g>
+      }
     </g>
-    }
-  </g>
-</svg>
+  </svg>
+</div>

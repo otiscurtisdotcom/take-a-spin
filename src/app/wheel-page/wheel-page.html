@@ -2,9 +2,11 @@
   <div class="content">
     <div class="spinner-container">
       <div class="marker"></div>
-      <spinner-app-wheel [wheelNumber]="wheelNumber" />
+      <spinner-app-wheel />
     </div>
-    <button (click)="getRandom()">Random</button>
-    <button (click)="getFixed()">Fixed</button>
+    <div class="buttons">
+      <button (click)="getRandom()">Random</button>
+      <button (click)="getFixed()">Fixed</button>
+    </div>
   </div>
 </section>

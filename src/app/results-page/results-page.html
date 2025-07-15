@@ -1,6 +1,8 @@
 <section>
   <div class="content">
-    <p>RESULT: {{result()}}</p>
+    @if (result(); as result) {
+    <p>RESULT: {{result.label}}</p>
+    }
     <div>
       <button (click)="startAgain()">Start again</button>
     </div>

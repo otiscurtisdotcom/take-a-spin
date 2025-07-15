@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, computed } from '@angular/core';
 import { Router } from '@angular/router';
 import { WheelService } from '../services/wheel-service';
+import { SEGMENTS_DATA } from '../constants/segments';
 
 @Component({
   selector: 'spinner-app-results-page',
@@ -8,7 +9,10 @@ import { WheelService } from '../services/wheel-service';
   styleUrl: './results-page.scss'
 })
 export class ResultsPage {
-  readonly result = this.wheelService.result;
+  readonly result = computed(() => {
+    const resultIndex = this.wheelService.result();
+    return resultIndex ? SEGMENTS_DATA[resultIndex] : null;
+  })
 
   constructor(
     private wheelService: WheelService,

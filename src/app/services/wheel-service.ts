@@ -10,14 +10,7 @@ const FIXED = 3;
 export class WheelService {
   readonly result = signal<number | null>(null);
 
-  constructor(private router: Router) {
-    effect(() => {
-      const value = this.result();
-      if (value !== null) {
-        this.router.navigate(['/results']);
-      }
-    });
-  }
+  constructor(private router: Router) { }
 
   spinRandom() {
     const random = Math.floor(Math.random() * TOTAL);

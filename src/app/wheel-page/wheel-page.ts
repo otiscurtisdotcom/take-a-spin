@@ -9,8 +9,6 @@ import { WheelService } from '../services/wheel-service';
   styleUrl: './wheel-page.scss'
 })
 export class WheelPage {
-  readonly wheelNumber = this.wheelService.result;
-
   constructor(private wheelService: WheelService) { }
 
   getRandom() {
