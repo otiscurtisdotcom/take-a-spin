@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { WelcomePage } from './welcome-page/welcome-page';
 import { WheelPage } from './wheel-page/wheel-page';
 import { ResultsPage } from './results-page/results-page';
+import { resultsGuard } from './guards/results-guard';
 
 export const routes: Routes = [
   {
@@ -16,6 +17,7 @@ export const routes: Routes = [
   },
   {
     path: 'results',
+    canActivate: [resultsGuard],
     component: ResultsPage,
     data: { animation: 'ResultsPage' }
   }
