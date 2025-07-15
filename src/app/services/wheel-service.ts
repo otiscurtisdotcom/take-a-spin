@@ -1,8 +1,6 @@
-import { effect, Injectable, signal } from '@angular/core';
-import { Router } from '@angular/router';
-
-const TOTAL = 6;
-const FIXED = 3;
+import { Injectable, signal } from '@angular/core';
+import { FIXED_SPIN_INDEX } from '../constants/spins';
+import { SEGMENTS_DATA } from '../constants/segments';
 
 @Injectable({
   providedIn: 'root'
@@ -10,15 +8,13 @@ const FIXED = 3;
 export class WheelService {
   readonly result = signal<number | null>(null);
 
-  constructor(private router: Router) { }
-
   spinRandom() {
-    const random = Math.floor(Math.random() * TOTAL);
+    const random = Math.floor(Math.random() * SEGMENTS_DATA.length);
     this.result.set(random);
   }
 
   spinFixed() {
-    this.result.set(FIXED);
+    this.result.set(FIXED_SPIN_INDEX);
   }
 
   clear() {

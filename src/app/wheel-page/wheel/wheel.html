@@ -1,4 +1,4 @@
-<div class="wheel-wrapper" [@spin]="{ value: spinTrigger(), params: { transform: getRotationStyle() } }"
+<div class="wheel-wrapper" [@spin]="{ value: spinTrigger(), params: { transform: rotationStyle() } }"
   (@spin.done)="onAnimationDone()" [style.transform]="finalTransform()">
   <svg viewBox="0 0 200 200" class="wheel">
     <defs>
