@@ -4,12 +4,12 @@ export interface SegmentData {
 }
 
 export const SEGMENTS_DATA: SegmentData[] = [
-  { label: 'One', color: '#f66' },
-  { label: 'Two', color: '#6f6' },
-  { label: 'Three', color: '#66f' },
-  { label: 'Four', color: '#ff6' },
-  { label: 'Five', color: '#6ff' },
-  { label: 'Six', color: '#f6f' },
-];
+  { label: 'One', color: '#c14646' }, // rich coral red
+  { label: 'Two', color: '#3f8c4e' }, // leafy green
+  { label: 'Three', color: '#4566aa' }, // medium slate blue
+  { label: 'Four', color: '#b59a34' }, // golden ochre
+  { label: 'Five', color: '#3c9994' }, // teal blue
+  { label: 'Six', color: '#9a4e97' }, // medium plum
+]
 
 export const SEGMENTS_CIRCUMFERENCE = 360 / SEGMENTS_DATA.length;
