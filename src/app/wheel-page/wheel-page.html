@@ -5,8 +5,8 @@
       <spinner-app-wheel />
     </div>
     <div class="buttons">
-      <button (click)="getRandom()">Random</button>
-      <button (click)="getFixed()">Fixed</button>
+      <spinner-app-button (clickEvent)="getRandom()" [label]="'Random'" />
+      <spinner-app-button (clickEvent)="getFixed()" [label]="'Fixed'" />
     </div>
   </div>
 </section>

@@ -3,17 +3,18 @@
 $default-font-family: "Ubuntu", sans-serif;
 $default-font-weight: 400;
 
-$headline-font-family: "Leckerli One", cursive;
+$logo-font-family: "Leckerli One", cursive;
 
-$wheel-font-family: "Noticia Text", serif;
-$wheel-font-weight: 700;
+$headline-font-family: "Noticia Text", serif;
+$headline-font-weight: 700;
 
-h1,
-h2 {
-  font-family: $headline-font-family;
+h1 {
+  font-family: $logo-font-family;
+  font-size: 42px;
   text-shadow: 3px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
-h1 {
-  font-size: 42px;
+h2 {
+  font-family: $headline-font-family;
+  font-size: 36px;
 }

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { ApplicationRoutes } from '../constants/routes';
+import { Link } from "../shared/link/link";
 
 @Component({
   selector: 'spinner-app-welcome-page',
-  imports: [RouterLink],
+  imports: [Link],
   templateUrl: './welcome-page.html',
   styleUrl: './welcome-page.scss'
 })
