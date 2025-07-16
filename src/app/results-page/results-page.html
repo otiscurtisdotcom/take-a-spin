@@ -1,10 +1,15 @@
 <section>
   <div class="content">
     @if (result(); as result) {
-    <p>RESULT: {{result.label}}</p>
+    <div>
+      <p>Your number is:</p>
+      <span class="big-number" [style.color]="result.color">
+        {{result.label}}
+      </span>
+    </div>
     }
     <div>
-      <button (click)="startAgain()">Start again</button>
+      <spinner-app-button (clickEvent)="startAgain()" [label]="'Start again'" />
     </div>
   </div>
 </section>

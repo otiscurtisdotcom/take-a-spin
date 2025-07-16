@@ -3,9 +3,9 @@
 
 .wheel {
   width: 100%;
-  height: auto;
   display: block;
   overflow: visible;
+  height: auto;
 
   #slice {
     stroke: colors.$black;

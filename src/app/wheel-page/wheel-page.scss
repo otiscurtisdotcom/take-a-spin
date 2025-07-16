@@ -1,5 +1,9 @@
+@use '../../styles/colors';
+
 .spinner-container {
   position: relative;
+  width: 100%;
+  max-width: calc(100vh - 300px);
 }
 
 .marker {
@@ -7,13 +11,18 @@
   top: -15px;
   left: 50%;
   transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 15px solid black;
   z-index: 1;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+
+  svg {
+    height: 20px;
+    width: 40px;
+    fill: colors.$white;
+    filter: drop-shadow(0 4px 2px rgba(0, 0, 0, 0.4));
+    stroke: colors.$black;
+    stroke-width: 1px;
+    stroke-linejoin: round;
+    overflow: visible;
+  }
 }
 
 .buttons {
