@@ -11,13 +11,13 @@
     stroke: colors.$black;
     stroke-width: 2px;
     stroke-linejoin: round;
-    ;
   }
 }
 
 .segment-label {
-  font-size: 18px;
+  font-size: 32px;
   fill: colors.$white;
-  font-family: typography.$default-font-family;
-  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+  font-family: typography.$wheel-font-family;
+  font-weight: typography.$wheel-font-weight;
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
 }
