@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ApplicationRoutes } from '../constants/routes';
 
 @Component({
   selector: 'spinner-app-welcome-page',
@@ -8,5 +9,5 @@ import { RouterLink } from '@angular/router';
   styleUrl: './welcome-page.scss'
 })
 export class WelcomePage {
-
+  readonly wheelPageRoute = `/${ApplicationRoutes.WHEEL}`;
 }

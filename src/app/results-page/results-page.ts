@@ -15,7 +15,7 @@ export class ResultsPage {
   })
 
   constructor(
-    private wheelService: WheelService,
+    private readonly wheelService: WheelService,
     private readonly router: Router
   ) { }
 

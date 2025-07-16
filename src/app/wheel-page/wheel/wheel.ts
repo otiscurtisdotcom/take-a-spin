@@ -1,9 +1,10 @@
 import { Component, computed, effect, signal, Signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { WheelService } from '../../services/wheel-service';
-import { animate, style, transition, trigger } from '@angular/animations';
 import { SegmentData, SEGMENTS_CIRCUMFERENCE, SEGMENTS_DATA } from '../../constants/segments';
 import { INITIAL_SPINS, POST_SPIN_DELAY_MS } from '../../constants/spins';
+import { ApplicationRoutes } from '../../constants/routes';
+import { spinAnimation } from '../../animations/spinAnimation';
 
 interface Segment extends SegmentData {
   rotation: string;
@@ -11,16 +12,9 @@ interface Segment extends SegmentData {
 
 @Component({
   selector: 'spinner-app-wheel',
-  imports: [],
   templateUrl: './wheel.html',
   styleUrl: './wheel.scss',
-  animations: [
-    trigger('spin', [
-      transition('false => true', [
-        animate('5s cubic-bezier(.21,.91,.73,1.03)', style({ transform: '{{ transform }}' }))
-      ], { params: { transform: 'rotate(0deg)' } })
-    ])
-  ]
+  animations: [spinAnimation]
 })
 export class Wheel {
   private readonly rotation = signal(0);
@@ -41,7 +35,7 @@ export class Wheel {
   });
 
   constructor(
-    private router: Router,
+    private readonly router: Router,
     private readonly wheelService: WheelService
   ) {
     effect(() => {
@@ -59,7 +53,7 @@ export class Wheel {
     this.hasSpun.set(true);
 
     setTimeout(() => {
-      this.router.navigate(['/results']);
+      this.router.navigate([`/${ApplicationRoutes.RESULTS}`]);
     }, POST_SPIN_DELAY_MS);
   }
 }

@@ -6,11 +6,12 @@ import {
   animate,
   stagger
 } from '@angular/animations';
+import { CONTENT_WRAPPER, ENTER_ANIMATION_MS, ENTER_DELAY_MS, ENTER_STAGGER_MS, LEAVE_ANIMATION_MS } from '../constants/routeAnimations';
 
 export const routeAnimations = trigger('routeAnimations', [
   transition('* => *', [
     query(
-      ':enter .content > *',
+      `:enter ${CONTENT_WRAPPER} > *`,
       style({ opacity: 0, transform: 'translateY(20px)' }),
       { optional: true }
     ),
@@ -19,14 +20,17 @@ export const routeAnimations = trigger('routeAnimations', [
       style({
         position: 'absolute',
       }),
-      animate('300ms ease-out', style({ opacity: 0 }))
+      animate(
+        `${LEAVE_ANIMATION_MS}ms ease-out`,
+        style({ opacity: 0, transform: 'translateY(-20px)' })
+      )
     ], { optional: true }),
 
     query(
-      ':enter .content > *',
-      stagger(100, [
+      `:enter ${CONTENT_WRAPPER} > *`,
+      stagger(ENTER_STAGGER_MS, [
         animate(
-          '400ms 100ms ease-out',
+          `${ENTER_ANIMATION_MS}ms ${ENTER_DELAY_MS}ms ease-out`,
           style({ opacity: 1, transform: 'translateY(0)' })
         ),
       ]),
