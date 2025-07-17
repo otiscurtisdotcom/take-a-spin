@@ -1,15 +1,11 @@
-<section>
-  <div class="content">
-    @if (result(); as result) {
-    <div>
-      <p>Your number is:</p>
-      <span class="big-number" [style.color]="result.color">
-        {{result.label}}
-      </span>
-    </div>
-    }
-    <div>
-      <spinner-app-button (clickEvent)="startAgain()" [label]="'Start again'" />
-    </div>
+<div class="content results-page">
+  @if (result(); as result) {
+  <div class="results-page__result">
+    <p>Your number is:</p>
+    <span class="results-page__result__number" [style.color]="result.color">
+      {{result.label}}
+    </span>
   </div>
-</section>
+  }
+  <spinner-app-button (clickEvent)="startAgain()" [label]="'Start again'" />
+</div>

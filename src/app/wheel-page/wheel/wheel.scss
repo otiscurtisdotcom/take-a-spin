@@ -2,22 +2,24 @@
 @use '../../../styles/typography';
 
 .wheel {
-  width: 100%;
-  display: block;
-  overflow: visible;
-  height: auto;
+  &__svg {
+    width: 100%;
+    display: block;
+    overflow: visible;
+    height: auto;
 
-  #slice {
-    stroke: colors.$black;
-    stroke-width: 2px;
-    stroke-linejoin: round;
+    #slice {
+      stroke: colors.$black;
+      stroke-width: 2px;
+      stroke-linejoin: round;
+    }
+
+    &__text {
+      font-size: 32px;
+      fill: colors.$white;
+      font-family: typography.$headline-font-family;
+      font-weight: typography.$headline-font-weight;
+      text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+    }
   }
-}
-
-.segment-label {
-  font-size: 32px;
-  fill: colors.$white;
-  font-family: typography.$headline-font-family;
-  font-weight: typography.$headline-font-weight;
-  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
 }

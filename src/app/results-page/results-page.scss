@@ -1,12 +1,19 @@
 @use '../../styles/colors';
 @use '../../styles/typography';
 
-.big-number {
-  display: block;
-  font-size: 200px;
-  line-height: 1;
-  font-family: typography.$headline-font-family;
-  font-weight: typography.$headline-font-weight;
-  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
-  text-align: center;
+.results-page {
+  &__result {
+    display: flex;
+    flex-direction: column;
+
+    &__number {
+      display: block;
+      font-size: 200px;
+      line-height: 1;
+      font-family: typography.$headline-font-family;
+      font-weight: typography.$headline-font-weight;
+      text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+  }
 }
