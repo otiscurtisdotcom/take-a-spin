@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { WheelComponent } from './wheel/wheel';
+import { WheelComponent } from './wheel/wheel.component';
 import { WheelService } from '../services/wheel-service';
 import { Button } from '../shared/button/button';
 

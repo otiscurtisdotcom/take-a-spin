@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { resultsGuard } from './guards/results-guard';
+import { resultsGuard } from './guards/results.guard';
 import { ApplicationRoutes } from './constants/routes';
 
 // Lazy load page components to reduce bundle size

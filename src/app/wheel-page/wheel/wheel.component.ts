@@ -20,8 +20,8 @@ interface Segment extends SegmentData {
 
 @Component({
   selector: 'spinner-app-wheel',
-  templateUrl: './wheel.html',
-  styleUrl: './wheel.scss',
+  templateUrl: './wheel.component.html',
+  styleUrl: './wheel.component.scss',
   animations: [spinAnimation],
 })
 export class WheelComponent {
