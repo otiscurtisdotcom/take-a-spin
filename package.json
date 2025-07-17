@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint:ts": "eslint \"src/**/*.{ts,html}\" --fix",
     "lint:style": "stylelint \"src/**/*.scss\" --fix",
-    "lint": "npm run lint:ts && npm run lint:style"
+    "lint": "npm run lint:ts && npm run lint:style",
+    "deploy": "npx angular-cli-ghpages --dir=dist/spinner-app/browser"
   },
   "prettier": {
     "overrides": [
