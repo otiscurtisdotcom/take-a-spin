@@ -7,6 +7,13 @@ A simple spinning wheel game built with Angular 20, showcasing modern Angular fe
 
 ---
 
+## Deployment
+
+This project is deployed via GitHub Pages and can be accessed at:  
+https://otiscurtisdotcom.github.io/take-a-spin/
+
+---
+
 ## Tech Stack
 
 - Angular 20 (NG20)
