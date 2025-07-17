@@ -1,59 +1,79 @@
-# SpinnerApp
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.0.
+# Take a Spin!
 
-## Development server
+## Overview
 
-To start a local development server, run:
+A simple spinning wheel game built with Angular 20, showcasing modern Angular features such as standalone components and signals. Users can spin the wheel either randomly or with a fixed result, then see the outcome on a results page. The project demonstrates UI structuring, animation, state management, and routing guards.
 
-```bash
-ng serve
+---
+
+## Tech Stack
+
+- Angular 20 (NG20)
+- TypeScript
+- CSS/SCSS for styling
+
+Notable Angular features used:
+
+- **Standalone Components** for simpler module management
+- **Signals** for reactive state handling
+- Angular Router with **route guards**
+- Angular Animations (router animations and wheel spin)
+
+---
+
+## How to Run
+
+Clone the repository and run:
+
+```
+npm install
+npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+This will start the Angular development server, typically accessible at `http://localhost:4200`.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Linting and Tests
 
-```bash
-ng generate component component-name
+- Run all linting (TS, HTML, SCSS) and automatic fixes:
+
+```
+npm run lint
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+This runs ESLint (including TypeScript linting), Stylelint (SCSS), and fixes issues where possible. Note: The lint setup enforces strong typing by not allowing `any`.
 
-```bash
-ng generate --help
+- Run unit tests:
+
+```
+npm run test
 ```
 
-## Building
+This runs the Angular testing suite (Jasmine/Karma), covering components, services, and guards.
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## Project Flow and Key Features
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- The **Welcome Page** serves as the landing page with a "Get Started" button.
+- The **Wheel Page** presents a spinning wheel divided into segments, with buttons for:
+  - Random spin (picks a random segment)
+  - Fixed spin (always lands on a predefined segment. This will be 3, but can be edited in the consts)
+- Upon spinning, the result is stored in an Angular **signal** inside the `WheelService`.
+- The **Results Page** displays the selected segment's label and color.
+- A **route guard** prevents navigating to the results page unless a spin has completed, enhancing flow robustness.
+- The UI is responsive and mobile-friendly.
+- Animations use CSS transitions and Angular animation support.
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Notes
 
-```bash
-ng test
-```
+- The project emphasizes code clarity with semantic HTML, meaningful class names, and well-commented logic, especially for spin calculations and navigation.
+- Modern Angular features help reduce boilerplate and improve state management.
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Thank you for reviewing this project!

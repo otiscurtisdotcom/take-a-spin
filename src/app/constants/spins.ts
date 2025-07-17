@@ -1,4 +1,7 @@
+// Increase the total number of rotations
 export const INITIAL_SPINS = 5;
+
+// The array index of the FIXED option
 export const FIXED_SPIN_INDEX = 2;
 
 export const SPIN_TIME_MS = 5000;

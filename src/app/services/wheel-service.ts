@@ -17,6 +17,7 @@ export class WheelService {
   readonly result = signal<number | null>(null);
 
   spinRandom(): void {
+    // Get a random value, based on the number of segments in the array.
     const random = Math.floor(Math.random() * SEGMENTS_DATA.length);
     this.result.set(random);
   }
@@ -26,6 +27,7 @@ export class WheelService {
   }
 
   calculateRotation(resultIndex: number): number {
+    // Rotate N full spins, then subtract segment offset to land on the correct result
     return INITIAL_SPINS * 360 - SEGMENTS_CIRCUMFERENCE * resultIndex;
   }
 
