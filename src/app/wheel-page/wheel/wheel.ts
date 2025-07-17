@@ -1,9 +1,6 @@
 import { Component, computed, effect, signal, Signal } from '@angular/core';
-import { Router } from '@angular/router';
 import { WheelService } from '../../services/wheel-service';
 import { SegmentData, SEGMENTS_CIRCUMFERENCE, SEGMENTS_DATA } from '../../constants/segments';
-import { INITIAL_SPINS, POST_SPIN_DELAY_MS } from '../../constants/spins';
-import { ApplicationRoutes } from '../../constants/routes';
 import { spinAnimation } from '../../animations/spinAnimation';
 
 interface Segment extends SegmentData {
@@ -16,7 +13,7 @@ interface Segment extends SegmentData {
   styleUrl: './wheel.scss',
   animations: [spinAnimation]
 })
-export class Wheel {
+export class WheelComponent {
   private readonly rotation = signal(0);
   private readonly hasSpun = signal(false);
   private readonly wheelNumber = this.wheelService.result;
@@ -35,13 +32,15 @@ export class Wheel {
   });
 
   constructor(
-    private readonly router: Router,
     private readonly wheelService: WheelService
   ) {
     effect(() => {
+      // Prevent double spin
+      if (this.hasSpun() || this.spinTrigger()) return;
+
       const newNumber = this.wheelNumber();
       if (newNumber !== null) {
-        const degrees = (INITIAL_SPINS * 360) - (SEGMENTS_CIRCUMFERENCE * newNumber);
+        const degrees = this.wheelService.calculateRotation(newNumber);
         this.rotation.set(degrees);
         this.spinTrigger.set(true);
       }
@@ -51,9 +50,6 @@ export class Wheel {
   onAnimationDone() {
     if (!this.spinTrigger()) return;
     this.hasSpun.set(true);
-
-    setTimeout(() => {
-      this.router.navigate([`/${ApplicationRoutes.RESULTS}`]);
-    }, POST_SPIN_DELAY_MS);
+    this.wheelService.navigateToResult();
   }
 }

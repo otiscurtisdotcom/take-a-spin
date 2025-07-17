@@ -1,11 +1,11 @@
 import { Component, signal } from '@angular/core';
-import { Wheel } from "./wheel/wheel";
+import { WheelComponent } from "./wheel/wheel";
 import { WheelService } from '../services/wheel-service';
 import { Button } from "../shared/button/button";
 
 @Component({
   selector: 'spinner-app-wheel-page',
-  imports: [Wheel, Button],
+  imports: [WheelComponent, Button],
   templateUrl: './wheel-page.html',
   styleUrl: './wheel-page.scss'
 })
