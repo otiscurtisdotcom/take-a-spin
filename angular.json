@@ -18,7 +18,6 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "baseHref": "/take-a-spin/",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -37,6 +36,7 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/take-a-spin/",
               "budgets": [
                 {
                   "type": "initial",
