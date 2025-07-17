@@ -1,22 +1,22 @@
-import { Component, signal } from '@angular/core';
-import { WheelComponent } from "./wheel/wheel";
+import { Component, inject } from '@angular/core';
+import { WheelComponent } from './wheel/wheel';
 import { WheelService } from '../services/wheel-service';
-import { Button } from "../shared/button/button";
+import { Button } from '../shared/button/button';
 
 @Component({
   selector: 'spinner-app-wheel-page',
   imports: [WheelComponent, Button],
   templateUrl: './wheel-page.html',
-  styleUrl: './wheel-page.scss'
+  styleUrl: './wheel-page.scss',
 })
 export class WheelPage {
-  constructor(private wheelService: WheelService) { }
+  private readonly wheelService = inject(WheelService);
 
-  getRandom() {
+  spinRandom(): void {
     this.wheelService.spinRandom();
   }
 
-  getFixed() {
+  spinFixed(): void {
     this.wheelService.spinFixed();
   }
 }

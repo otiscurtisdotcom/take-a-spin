@@ -10,6 +10,6 @@ export const SEGMENTS_DATA: SegmentData[] = [
   { label: '4', color: '#b59a34' }, // golden ochre
   { label: '5', color: '#3c9994' }, // teal blue
   { label: '6', color: '#9a4e97' }, // medium plum
-]
+];
 
 export const SEGMENTS_CIRCUMFERENCE = 360 / SEGMENTS_DATA.length;

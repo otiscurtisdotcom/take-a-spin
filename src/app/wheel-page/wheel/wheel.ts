@@ -1,6 +1,17 @@
-import { Component, computed, effect, signal, Signal } from '@angular/core';
+import {
+  Component,
+  computed,
+  effect,
+  inject,
+  signal,
+  Signal,
+} from '@angular/core';
 import { WheelService } from '../../services/wheel-service';
-import { SegmentData, SEGMENTS_CIRCUMFERENCE, SEGMENTS_DATA } from '../../constants/segments';
+import {
+  SegmentData,
+  SEGMENTS_CIRCUMFERENCE,
+  SEGMENTS_DATA,
+} from '../../constants/segments';
 import { spinAnimation } from '../../animations/spinAnimation';
 
 interface Segment extends SegmentData {
@@ -11,15 +22,19 @@ interface Segment extends SegmentData {
   selector: 'spinner-app-wheel',
   templateUrl: './wheel.html',
   styleUrl: './wheel.scss',
-  animations: [spinAnimation]
+  animations: [spinAnimation],
 })
 export class WheelComponent {
+  private readonly wheelService = inject(WheelService);
+
   private readonly rotation = signal(0);
   private readonly hasSpun = signal(false);
   private readonly wheelNumber = this.wheelService.result;
   readonly spinTrigger = signal(false);
   readonly rotationStyle = computed(() => `rotate(${this.rotation()}deg)`);
-  readonly finalTransform = computed(() => this.hasSpun() ? this.rotationStyle() : '');
+  readonly finalTransform = computed(() =>
+    this.hasSpun() ? this.rotationStyle() : '',
+  );
 
   readonly segments: Signal<Segment[]> = computed(() => {
     return SEGMENTS_DATA.map((segment, i) => {
@@ -31,9 +46,7 @@ export class WheelComponent {
     });
   });
 
-  constructor(
-    private readonly wheelService: WheelService
-  ) {
+  constructor() {
     effect(() => {
       // Prevent double spin
       if (this.hasSpun() || this.spinTrigger()) return;
@@ -47,8 +60,10 @@ export class WheelComponent {
     });
   }
 
-  onAnimationDone() {
+  onAnimationDone(): void {
+    // Prevent animation done from firing on page load
     if (!this.spinTrigger()) return;
+
     this.hasSpun.set(true);
     this.wheelService.navigateToResult();
   }
