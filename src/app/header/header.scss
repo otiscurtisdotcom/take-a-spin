@@ -4,7 +4,7 @@
 header {
   align-items: center;
   background-color: colors.$header;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 3px rgb(0 0 0 / 10%);
   display: flex;
   height: vars.$header-height;
   padding: 20px;

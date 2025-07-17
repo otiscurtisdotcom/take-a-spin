@@ -3,23 +3,23 @@
 
 .wheel {
   &__svg {
-    width: 100%;
     display: block;
-    overflow: visible;
     height: auto;
+    overflow: visible;
+    width: 100%;
 
     #slice {
       stroke: colors.$black;
-      stroke-width: 2px;
       stroke-linejoin: round;
+      stroke-width: 2px;
     }
 
     &__text {
-      font-size: 32px;
       fill: colors.$white;
       font-family: typography.$headline-font-family;
+      font-size: 32px;
       font-weight: typography.$headline-font-weight;
-      text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+      text-shadow: 4px 4px 0 rgb(0 0 0 / 20%);
     }
   }
 }

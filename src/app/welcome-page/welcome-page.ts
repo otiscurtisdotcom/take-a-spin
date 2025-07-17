@@ -6,7 +6,6 @@ import { Link } from '../shared/link/link';
   selector: 'spinner-app-welcome-page',
   imports: [Link],
   templateUrl: './welcome-page.html',
-  styleUrl: './welcome-page.scss',
 })
 export class WelcomePage {
   readonly wheelPageRoute = `/${ApplicationRoutes.WHEEL}`;

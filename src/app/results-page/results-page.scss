@@ -8,12 +8,12 @@
 
     &__number {
       display: block;
-      font-size: 200px;
-      line-height: 1;
       font-family: typography.$headline-font-family;
+      font-size: 200px;
       font-weight: typography.$headline-font-weight;
-      text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+      line-height: 1;
       text-align: center;
+      text-shadow: 4px 4px 0 rgb(0 0 0 / 20%);
     }
   }
 }

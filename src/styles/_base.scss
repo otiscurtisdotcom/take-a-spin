@@ -10,8 +10,8 @@
 }
 
 body {
-  background-color: colors.$background;
   background: colors.$background-gradient;
+  background-color: colors.$background;
   color: colors.$white;
   font-family: typography.$default-font-family;
   font-weight: typography.$default-font-weight;
